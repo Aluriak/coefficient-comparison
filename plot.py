@@ -37,7 +37,7 @@ def plot(measures:dict, title:str=TITLE, *, xlabel:str=XLABEL,
     plot.set_ylabel(ylabel)
 
     # axis limits : show the 0
-    plot.set_ylim(0, 1.1)
+    plot.set_ylim(0, 1.)
 
     # print or save
     if savefile:
