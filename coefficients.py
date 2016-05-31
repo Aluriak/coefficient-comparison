@@ -4,7 +4,7 @@ Functions should be defined as (set, set) -> float,
 with return value in [0;1].
 
 """
-import math as m
+import math
 
 def functions() -> tuple:
     """Return functions of this module, excluding this one"""
@@ -19,4 +19,4 @@ def dice(a:set, b:set) -> float:
     return 2 * len(a & b) / (len(a) + len(b))
 
 def cosine(a:set, b:set) -> float:
-    return len(a & b) / (m.sqrt(len(a)) * m.sqrt(len(b)))
+    return len(a & b) / (math.sqrt(len(a)) * math.sqrt(len(b)))
