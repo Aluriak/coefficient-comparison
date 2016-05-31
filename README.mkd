@@ -2,7 +2,7 @@
 
 Dice and Jaccard differences for sets similarity computation now described graphically:
 
-![dice and jaccard comparison](https://github.com/Aluriak/coefficient-comparison/blob/master/results_50measure_100setsize.png)
+![dice and jaccard comparison](https://github.com/Aluriak/coefficient-comparison/blob/master/results_100measure_10000setsize.png)
 
 The triangular inequality is visible in dice case, because of the score lower than jaccard, which is near to linear.
 Run the main script with
