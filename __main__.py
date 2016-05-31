@@ -1,9 +1,12 @@
 import random
-import coefficients
 from collections import defaultdict
 
+import coefficients
+from plot import plot
 
-SET_SIZE = 10
+
+SET_SIZE = 100
+NB_MEASURE = 50
 DATA_RANGE = range(0, SET_SIZE * 10 + 1)
 SET_A = frozenset(random.sample(DATA_RANGE, SET_SIZE))
 NOT_SET_A = set(DATA_RANGE) - SET_A
@@ -27,7 +30,7 @@ def gen_set_b() -> iter:
     choosen in DATA_RANGE, and ratio*100 percent of these elements
     are present in SET_A.
     """
-    for inc_percent in range(0, 101, 10):
+    for inc_percent in range(0, 101, int(100 / NB_MEASURE)):
         inc_ratio = inc_percent / 100.
         set_b = frozenset(
             set(random.sample(SET_A, int(SET_SIZE * inc_ratio))) |
@@ -40,4 +43,5 @@ if __name__ == "__main__":
     coefs = tuple(attr for name, attr in globals().items()
                   if callable(attr) and name.startswith('coef_'))
 
-    print(compute_data(coefficients.functions(), SET_A, gen_set_b()))
+    data = compute_data(coefficients.functions(), SET_A, gen_set_b())
+    plot({f.__name__: d for f, d in data.items()}, savefile='./results.png', dpi=500)
