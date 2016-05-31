@@ -14,3 +14,6 @@ def functions() -> tuple:
 
 def jaccard(a:set, b:set) -> float:
     return len(a & b) / (len(a | b))
+
+def dice(a:set, b:set) -> float:
+    return 2 * len(a | b) / (len(a) + len(b))
