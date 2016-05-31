@@ -25,8 +25,8 @@ def plot(measures:dict, title:str=TITLE, *, xlabel:str=XLABEL,
     """
     # convert in pandas data frame for allow plotting
     gx = pd.DataFrame.from_dict(measures)
-    # {black dotted,red,yellow,blue} line with marker o
-    styles = ['ko-', 'ro-', 'yo-', 'bo-']
+    # {black dotted,red} line with little dot
+    styles = ['k.-', 'r.-']
 
     # get plot, and sets the labels for the axis and the right axis (time)
     plot = gx.plot(style=styles)
