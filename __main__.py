@@ -44,4 +44,4 @@ if __name__ == "__main__":
                   if callable(attr) and name.startswith('coef_'))
 
     data = compute_data(coefficients.functions(), SET_A, gen_set_b())
-    plot({f.__name__: d for f, d in data.items()}, savefile='./results.png', dpi=500)
+    plot({f.__name__: d for f, d in data.items()}, savefile='./results.png', dpi=500, show=True)
