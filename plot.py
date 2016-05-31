@@ -26,14 +26,13 @@ def plot(measures:dict, title:str=TITLE, *, xlabel:str=XLABEL,
     # convert in pandas data frame for allow plotting
     gx = pd.DataFrame.from_dict(measures)
     # {black dotted,red,yellow,blue} line with marker o
-    styles = ['ko--', 'ro-', 'yo-', 'bo-']
+    styles = ['ko-', 'ro-', 'yo-', 'bo-']
 
     # get plot, and sets the labels for the axis and the right axis (time)
     plot = gx.plot(style=styles)
     lines, labels = plot.get_legend_handles_labels()
-    # labels = [key2label(l) for l in labels]
 
-    plot.legend(lines, labels)
+    plot.legend(lines, labels, loc='upper left')
     plot.set_xlabel(xlabel)
     plot.set_ylabel(ylabel)
 
